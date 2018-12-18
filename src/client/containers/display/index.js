@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./display.css";
+import { connect } from 'react-redux';
 
 class Display extends Component {
     render() {
@@ -8,7 +9,7 @@ class Display extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <th><button id="display_button" ></button></th>
+                            <th><button id="display_button" >{this.props.expression}</button></th>
                         </tr>
                     </tbody>
                 </table>
@@ -17,4 +18,10 @@ class Display extends Component {
     }
 }
 
-export default Display;
+const mapStateToProps = (state) => {
+    return {
+        calcReducer: state.calcReducer
+    };
+};
+
+export default connect(mapStateToProps)(Display);
