@@ -9,14 +9,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Display/>
+        <Display />
         <table>
           <tbody>
             <tr>
               <th><button onClick={() => this.props.addInput("7")}>7</button></th>
               <th><button onClick={() => this.props.addInput("8")}>8</button></th>
               <th><button onClick={() => this.props.addInput("9")} >9</button></th>
-              <th><button onClick={() => this.props.addInput("C")} >/</button></th>
+              <th><button onClick={() => this.props.addInput("/")} >/</button></th>
             </tr>
             <tr>
               <th><button onClick={() => this.props.addInput("4")} >4</button></th>
