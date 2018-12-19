@@ -34,11 +34,9 @@ export default function (state = INITIAL_STATE, action) {
             }
             let outputQueue = infixToPostfix(state.expression);
             let computedResult = evaluatePostfix(outputQueue);
-            console.log()
             state = {
                 ...state,
                 sequence: [],
-                res: computedResult,
                 expression: computedResult + "",
             }
             return state;
