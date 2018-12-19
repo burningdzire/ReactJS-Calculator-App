@@ -7,13 +7,9 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
-    let currExpression = "";
-    if (this.calcReducer != null) {
-      currExpression = this.calcReducer.expression;
-    }
     return (
       <div className="App">
-        <Display expression={currExpression} />
+        <Display/>
         <table>
           <tbody>
             <tr>

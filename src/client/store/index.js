@@ -1,7 +1,7 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 
 // Import Reducers
-import calcReducer from "./reducers/calcReducer";
+import reducers from "./reducers";
 
 // Importing Middlewares
 import logger from "redux-logger";
@@ -9,7 +9,7 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
 const store = createStore(
-    combineReducers({ calcReducer: calcReducer }),
+    reducers,
     {},
     applyMiddleware(logger, thunk, promise())
 )

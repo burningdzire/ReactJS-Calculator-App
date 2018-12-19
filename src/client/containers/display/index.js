@@ -9,7 +9,7 @@ class Display extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <th><button id="display_button" >{this.props.expression}</button></th>
+                            <th><button id="display_button" >{this.props.calcReducer.expression}</button></th>
                         </tr>
                     </tbody>
                 </table>

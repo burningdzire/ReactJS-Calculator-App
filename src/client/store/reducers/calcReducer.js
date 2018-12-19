@@ -17,19 +17,24 @@ function isOperator(ch) {
 //     }
 // }
 
-const calcReducer = (state = { sequence: [], res: 0, expression:"" }, action) => {
+const INITIAL_STATE = {
+    sequence: [],
+    res: 0,
+    expression: ""
+};
+
+export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case operations.ADD_OPERATOR_OPERAND:
             return {
                 ...state,
                 sequence: [...state.sequence, action.payload],
-                expression: state.expression+action.payload
+                expression: state.expression + action.payload
             }
         case operations.COMPUTE_RESULT:
             let operands = [];
             let operators = [];
             let currOperand = 0;
-            // let result;
             for (let i = 0; i < state.sequence.length; i++) {
                 if (isOperator(state.sequence[i])) {
                     operands.push(currOperand);
@@ -41,12 +46,10 @@ const calcReducer = (state = { sequence: [], res: 0, expression:"" }, action) =>
             }
             state = {
                 ...state,
-                sequence : [],
+                sequence: [],
             }
             return state;
         default:
             return state;
     }
 }
-
-export default calcReducer;
